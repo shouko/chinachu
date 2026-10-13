@@ -14,16 +14,7 @@ var RECORDED_DATA_FILE  = __dirname + '/data/recorded.json';
 
 // 標準モジュールのロード
 var fs            = require('fs');
-var util          = require('util');
-// Node 24 removed util.log; restore its timestamped format as a shim so the
-// existing util.log(...) calls below keep working on old and new Node alike.
-if (typeof util.log !== 'function') {
-	util.log = function () {
-		var d = new Date();
-		console.log(d.toDateString().slice(4, 10) + ' ' + d.toTimeString().slice(0, 8) + ' -',
-			Array.prototype.slice.call(arguments).join(' '));
-	};
-}
+var util          = require('./node24-compat');
 var net           = require('net');
 var child_process = require('child_process');
 

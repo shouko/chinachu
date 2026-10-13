@@ -17,7 +17,7 @@ const SCHEDULE_DATA_FILE = __dirname + '/data/schedule.json';
 const path = require('path');
 const url = require("url");
 const fs = require('fs');
-const util = require('util');
+const util = require('./node24-compat');
 const child_process = require('child_process');
 
 // ディレクトリチェック

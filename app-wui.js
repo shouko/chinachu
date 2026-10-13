@@ -23,7 +23,7 @@ const config = require(CONFIG_FILE);
 // Modules
 const path = require('path');
 const fs = require('fs');
-const util = require('util');
+const util = require('./node24-compat');
 const child_process = require('child_process');
 const url = require('url');
 const querystring = require('querystring');
